@@ -1,7 +1,5 @@
 package com.restclient.spring.controller;
 
-import java.util.Map;
-
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -19,7 +17,8 @@ public class RestClientController {
 		RequestView request = new RequestView();
 		request.setKey1("foo");
 		request.setKey2("bar");
-		return RestClient.post(request, "http://localhost:8080/post", ResponseView.class);
+		RestClient client = new RestClient("http://localhost:8080/post");
+		return client.post(request, ResponseView.class);
 	}
 	
 	@RequestMapping(value = "/post", method = RequestMethod.POST)
