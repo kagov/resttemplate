@@ -113,13 +113,12 @@ public class RestClient {
 	/**
 	 * A multipart POST method
 	 * @param multipartRequest The multipart request
-	 * @param url The url to be hit
 	 * @param responseType The class type of the response
 	 * @return the V type response
 	 * @throws IOException
 	 */
 	public  <V> V multipartPost(final List<FormRequest> multipartRequest,
-			final String url, final Class<V> responseType) throws IOException {
+			 final Class<V> responseType) throws IOException {
 
 		MultiValueMap<String, Object> request = new LinkedMultiValueMap<String, Object>();
 		for (FormRequest formRequest : multipartRequest) {
