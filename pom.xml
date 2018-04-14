@@ -33,5 +33,7 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
   </dependencies>
+  <build>
 	<finalName>app</finalName>
+  <build>	
 </project>
